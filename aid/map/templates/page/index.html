@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+{% load staticfiles %}
+
+{% block js %}<script src="{% static 'js/map.js' %}"></script>{% endblock %}
+
+{% block title %}Map{% endblock %}
+
+{{ boldmessage }}
+
+{% block primary %}
+    <input type="buttom" onclick="map()">
+{% endblock %}

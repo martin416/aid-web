@@ -3,20 +3,27 @@
 <html lang="en">
     <head>
         <title>Project X</title>
-        {% block js %}{% endblock %}
+
+        {% block css %} {% endblock %}
+        <script type="text/javascript">
+            var DJANGO_STATIC_URL = '{{ STATIC_URL }}';
+        </script>
     </head>
-    <body>
+    <body onload="init()">
         <div id="header">My Site</div>
         <div id="content">
             <div id="primary">
-                <h1>{% block title %}{% endblock %}</h1>
+                <h4>{% block title %}{% endblock %}</h4>
                 {% block primary %}
+
                 {% endblock %}
             </div>
             <div id="secondary">
                 {% block secondery %}
+
                 {% endblock %}
             <div>
         </div>
+        {% block js %} {% endblock %}
     </body>
 </html>

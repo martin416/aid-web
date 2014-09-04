@@ -19,4 +19,7 @@ class MongoDB:
 
     def retrieveLinhaAmarelaObjectByHour(self,hora):
         hora = '^'+str(hora)+'.*'
-        return self.mongoLinhaAmarela.find({'time': {'$regex':hora}}).sort([('date',1),('sense',1)])
+        return self.mongoLinhaAmarela.find({'time': {'$regex':hora}}).sort([('date',1),('time',1),('sense',1)])
+
+    def retrieveAllLinhaAmarela(self):
+        return self.mongoLinhaAmarela.find({}).sort([('date',1),('time',1),('sense',1)])

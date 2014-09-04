@@ -1,9 +1,7 @@
 var map;
 
 function init(){
-
     streetMarkLayer = mountStreetMark();
-
     map = new ol.Map({
         target: 'map',
           layers: [
@@ -16,8 +14,8 @@ function init(){
           zoom: 11
         })
     });
+    drawChart()
 }
-
 
 function mountStreetMark(){
         var iconStyleFlagBlue  = new ol.style.Style({

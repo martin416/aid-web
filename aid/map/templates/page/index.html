@@ -2,24 +2,37 @@
 {% load staticfiles %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="ol.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ol.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/ol.js' %}" > </script>
     <script src="{% static 'js/jquery-2.1.1.js' %}" > </script>
+    <script src="{% static 'js/ol.js' %}" > </script>
+    <script type="text/javascript">
+        var resultQtd = "{{resultQtd}}"
+    </script>
     <script src="{% static 'js/map.js' %}" > </script>
+    <script src="{% static 'js/Chart.js' %}" > </script>
+    <script src="{% static 'js/myChart.js' %}" > </script>
+    <script src="{% static 'js/main.js' %}" > </script>
 {% endblock %}
-
-{% block title %}Map{% endblock %}
 
 {% block primary %}
     <div id="map" class="map" tabindex="0"></div>
 {% endblock %}
 
-{% block secondary %}
-
+{% block secondery %}
+   <div id="charts">
+        <span class="headerChart"> Linha - Amarela <span>
+        <div id="chartLinhaAmarela">
+            <canvas id="myChartLA"></canvas>
+        </div>
+        <span class="headerChart" > Grajaú - Jacarepaguá </span>
+        <div id="chartGrajau">
+            <canvas id="myChartGJ"></canvas>
+        </div>
+   </div>
 {% endblock %}
 
 

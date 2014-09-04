@@ -1,3 +1,24 @@
 body{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+#map{
+    width: 59%;
+    height: 60%;
+    float: left;
+}
+
+#charts{
+    width: 39%;
+    height: 60%;
+    float: left;
+}
+
+.headerChart{
+    text-align: center;
+    width: 100% !important;
+    display: inherit;
+    font-weight: bold;
 }

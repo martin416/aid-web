@@ -11,16 +11,25 @@ def index(request):
     #latest_question_list = Question.objects.order_by('-pub_date')[:5]
     mongo = MongoDB()
     mongo.connect()
-    result = []
+    resultLA = []
+    resultGJ = []
     for jsonBD in mongo.retrieveAllLinhaAmarela():
-        result.append(dumps(jsonBD))
+        resultLA.append(dumps(jsonBD))
 
-    request.session['result'] = result
+    for jsonBD in mongo.retrieveAllGrajau():
+        resultGJ.append(dumps(jsonBD))
+
+    request.session['resultLA'] = resultLA
+    request.session['resultGJ'] = resultGJ
     template = loader.get_template('page/index.html')
 
-    context = RequestContext(request,{'resultQtd': len(result)})
+    context = RequestContext(request,{'resultQtdLA': len(resultLA),'resultQtdGJ': len(resultGJ)})
     return HttpResponse(template.render(context))
 
-def getNextJson(request, id = None):
-    result = request.session.get('result',{})
+def getNextJsonLA(request, id = None):
+    result = request.session.get('resultLA',{})
+    return HttpResponse(result[int(id)], mimetype="application/json")
+
+def getNextJsonGJ(request, id = None):
+    result = request.session.get('resultGJ',{})
     return HttpResponse(result[int(id)], mimetype="application/json")

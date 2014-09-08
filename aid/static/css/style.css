@@ -16,9 +16,16 @@ body{
     float: left;
 }
 
-.headerChart{
+.title{
+    font-weight: bold;
+}
+
+.center{
     text-align: center;
     width: 100% !important;
     display: inherit;
-    font-weight: bold;
+}
+
+.small{
+    font-size: 10px;
 }

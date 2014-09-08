@@ -23,3 +23,6 @@ class MongoDB:
 
     def retrieveAllLinhaAmarela(self):
         return self.mongoLinhaAmarela.find({}).sort([('date',1),('time',1),('sense',1)])
+
+    def retrieveAllGrajau(self):
+            return self.mongoGrajau.find({}).sort([('date',1),('time',1),('sense',1)])

@@ -1,25 +1,62 @@
-var map;
+/**
+** Variaveis Globais
+*/
+var busLat = [];
+var busLong = [];
+var busSentido = []
 
+/*mapa da tela como variável global*/
+var map = new ol.Map({
+    target: 'map',
+    view: new ol.View({
+      center: ol.proj.transform([-43.209586899999980000,-22.903539300000000000], 'EPSG:4326', 'EPSG:3857'),
+      zoom: 11
+    })
+});
+
+/**
+** Funções
+*/
+
+/*  */
 function init(){
     streetMarkLayer = mountStreetMark();
-    map = new ol.Map({
-        target: 'map',
-          layers: [
-            new ol.layer.Tile({
-              source: new ol.source.OSM()
-            }), streetMarkLayer
-          ],
-        view: new ol.View({
-          center: ol.proj.transform([-43.209586899999980000,-22.903539300000000000], 'EPSG:4326', 'EPSG:3857'),
-          zoom: 11
-        })
-    });
+    map.addLayer(new ol.layer.Tile({source: new ol.source.OSM()}));
+    map.addLayer(streetMarkLayer);
+    map.addLayer(streetMarkLayer);
     drawChart()
+    main()
+}
+
+function addBusLayer(){
+    var featuresArray = [];
+    var layerToRemove = map.getLayers().item(2)
+    map.removeLayer(layerToRemove)
+
+    var iconStyleBus  = new ol.style.Style({
+    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: DJANGO_STATIC_URL+'img/icon_bus.png'
+      }))
+    });
+
+
+    var busFeature = new ol.source.Vector({});
+    for (i = 0; i <  busLat.length; i++) {
+        iconFeature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([ parseFloat(busLong[i]),  parseFloat(busLat[i])], 'EPSG:4326', 'EPSG:3857'))});
+        busFeature.addFeature(iconFeature);
+    }
+    var busLayer = new ol.layer.Vector({source: busFeature,style:iconStyleBus});
+    map.addLayer(busLayer);
+
 }
 
 function mountStreetMark(){
-        var iconStyleFlagBlue  = new ol.style.Style({
-      image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+    var iconStyleFlagBlue  = new ol.style.Style({
+    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
         anchor: [0.5, 46],
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',

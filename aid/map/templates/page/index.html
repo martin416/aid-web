@@ -7,16 +7,21 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/jquery-2.1.1.js' %}" > </script>
-    <script src="{% static 'js/ol.js' %}" > </script>
+    <!-- Variáveis passada do django para o javascript -->
     <script type="text/javascript">
         var resultQtdLA = "{{resultQtdLA}}"
         var resultQtdGJ = "{{resultQtdGJ}}"
     </script>
-    <script src="{% static 'js/map.js' %}" > </script>
+
+    <!-- Frameworks prontos -->
     <script src="{% static 'js/Chart.js' %}" > </script>
-    <script src="{% static 'js/myChart.js' %}" > </script>
-    <script src="{% static 'js/main.js' %}" > </script>
+    <script src="{% static 'js/jquery-2.1.1.js' %}" > </script>
+    <script src="{% static 'js/ol.js' %}" > </script>
+
+    <!-- Javascript criados -->
+    <script src="{% static 'js/mountChart.js' %}" > </script>
+    <script src="{% static 'js/map.js' %}" > </script>
+    <script src="{% static 'js/manager.js' %}" > </script>
 {% endblock %}
 
 {% block primary %}

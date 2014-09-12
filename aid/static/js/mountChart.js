@@ -5,18 +5,18 @@ var barChartDataLA = {
     datasets : [
         {
             label: "Indo",
-            fillColor : "rgba(178,178,178,0.8)",
-            strokeColor : "rgba(178,178,178,0.9)",
-            highlightFill: "rgba(178,178,178,0.75)",
-            highlightStroke: "rgba(178,178,178,1)",
+            fillColor : "rgba(5,18,255,0.8)",
+            strokeColor : "rgba(5,18,255,0.9)",
+            highlightFill: "rgba(5,18,255,0.75)",
+            highlightStroke: "rgba(5,18,255,1)",
             data : [0,0,0,0,0,0,0,0,0,0,0,0,0]
         },
         {
             label: "Vindo",
-            fillColor : "rgba(247,5,5,0.8)",
-            strokeColor : "rgba(247,5,5,0.9)",
-            highlightFill: "rgba(247,5,5,0.75)",
-            highlightStroke: "rgba(247,5,5,1)",
+            fillColor : "rgba(255,5,5,0.8)",
+            strokeColor : "rgba(255,5,5,0.9)",
+            highlightFill: "rgba(255,5,5,0.75)",
+            highlightStroke: "rgba(255,5,5,1)",
             data : [0,0,0,0,0,0,0,0,0,0,0,0,0]
         },
         {
@@ -35,18 +35,18 @@ var barChartDataGJ = {
     datasets : [
         {
             label: "Indo",
-            fillColor : "rgba(178,178,178,0.8)",
-            strokeColor : "rgba(178,178,178,0.9)",
-            highlightFill: "rgba(178,178,178,0.75)",
-            highlightStroke: "rgba(178,178,178,1)",
+            fillColor : "rgba(5,18,255,0.8)",
+            strokeColor : "rgba(5,18,255,0.9)",
+            highlightFill: "rgba(5,18,255,0.75)",
+            highlightStroke: "rgba(5,18,255,1)",
             data : [0,0,0,0,0,0,0,0,0,0]
         },
         {
             label: "Vindo",
-            fillColor : "rgba(247,5,5,0.8)",
-            strokeColor : "rgba(247,5,5,0.9)",
-            highlightFill: "rgba(247,5,5,0.75)",
-            highlightStroke: "rgba(247,5,5,1)",
+            fillColor : "rgba(255,5,5,0.8)",
+            strokeColor : "rgba(255,5,5,0.9)",
+            highlightFill: "rgba(255,5,5,0.75)",
+            highlightStroke: "rgba(255,5,5,1)",
             data : [0,0,0,0,0,0,0,0,0,0]
         },
         {

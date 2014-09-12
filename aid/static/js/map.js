@@ -9,8 +9,8 @@ var busSentido = []
 var map = new ol.Map({
     target: 'map',
     view: new ol.View({
-      center: ol.proj.transform([-43.209586899999980000,-22.903539300000000000], 'EPSG:4326', 'EPSG:3857'),
-      zoom: 11
+      center: ol.proj.transform([-43.295574,-22.90469], 'EPSG:4326', 'EPSG:3857'),
+      zoom: 13
     })
 });
 
@@ -33,23 +33,37 @@ function addBusLayer(){
     var layerToRemove = map.getLayers().item(2)
     map.removeLayer(layerToRemove)
 
-    var iconStyleBus  = new ol.style.Style({
+    var iconStyleBusIndo  = new ol.style.Style({
     image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
         anchor: [0.5, 46],
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',
         opacity: 0.75,
-        src: DJANGO_STATIC_URL+'img/icon_bus.png'
+        src: DJANGO_STATIC_URL+'img/blue_bus_icon.png'
       }))
     });
 
+    var iconStyleBusVindo = new ol.style.Style({
+      image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: DJANGO_STATIC_URL+'img/red_bus_icon.png'
+      }))
+    });
 
     var busFeature = new ol.source.Vector({});
     for (i = 0; i <  busLat.length; i++) {
         iconFeature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([ parseFloat(busLong[i]),  parseFloat(busLat[i])], 'EPSG:4326', 'EPSG:3857'))});
+        if(busSentido[i] == 'INDO' ){
+            iconFeature.setStyle(iconStyleBusIndo)
+        }else{
+            iconFeature.setStyle(iconStyleBusVindo)
+        }
         busFeature.addFeature(iconFeature);
     }
-    var busLayer = new ol.layer.Vector({source: busFeature,style:iconStyleBus});
+    var busLayer = new ol.layer.Vector({source: busFeature});
     map.addLayer(busLayer);
 
 }

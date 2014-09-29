@@ -89,92 +89,56 @@ function mountStreetMark(){
       }))
     });
 
-    iconFeature1 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.263484,-22.916701], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature2 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.264471,-22.915317], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature3 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.263956,-22.914566], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature4 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.262755,-22.916286], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature5 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.266896,-22.915831], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature6 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.267111,-22.914981], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature7 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.270823,-22.916029], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature8 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.270909,-22.915436], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature9 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.274041,-22.916958], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature10 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.274921,-22.91591], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature11 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.27947,-22.917867], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature12 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.279535,-22.916898], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature13 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.281337,-22.917274], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature14 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.281766,-22.916384], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature15 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.282946,-22.91846], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature16 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.28432,-22.918361], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature17 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.28447,-22.921227], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature18 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.285371,-22.921602], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature19 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.282152,-22.922452], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature20 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.283204,-22.922946], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature21 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.282152,-22.922452], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature22 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.283204,-22.922946], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature23 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.281509,-22.924408], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature24 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.283869,-22.923401], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature25 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.285586,-22.926068], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature26 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.285843,-22.92508], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature27 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.290178,-22.925792], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature28 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.28977,-22.924586], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature29 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.290178,-22.925792], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature30 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.28977,-22.924586], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature31 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.293504,-22.924843], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature32 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.293096,-22.923401], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature33 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.297538,-22.92342], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature34 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.29758,-22.922511], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature35 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.301507,-22.92342], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature36 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.301829,-22.922452], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature37 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.305305,-22.923223], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature38 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.305413,-22.922175], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature39 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.309876,-22.923677], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature40 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.310369,-22.922689], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature41 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.312064,-22.925357], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature42 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.313352,-22.923776], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature43 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.315476,-22.926978], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature44 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.316206,-22.926266], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature45 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.319961,-22.929191], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature46 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.320798,-22.927551], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature47 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.322707,-22.930871], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature48 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.323437,-22.929981], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature49 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.326076,-22.93259], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature50 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.327643,-22.931246], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature51 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.328179,-22.93427], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeature52 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.330604,-22.932294], 'EPSG:4326', 'EPSG:3857'))});
 
-    iconFeatureLa1 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.235192,-22.85954], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa2 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.23442,-22.861715], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa3 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.241372,-22.866302], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa4 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.23957,-22.867805], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa5 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.249011,-22.872708], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa6 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.250299,-22.871285], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa7 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.261456,-22.873262], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa8 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.263001,-22.870415], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa9 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.271842,-22.876583], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa10 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.273129,-22.874922], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa11 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.279481,-22.881407], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa12 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.281283,-22.879904], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa13 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.288493,-22.884412], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa14 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.291154,-22.883779], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa15 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.297763,-22.893031], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa16 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.299479,-22.891686], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa17 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.303256,-22.902993], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa18 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.304715,-22.901886], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa19 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.306775,-22.908369], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa20 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.30832,-22.906235], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa21 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.313642,-22.909081], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa22 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.315358,-22.907974], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa23 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.319049,-22.916433], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa24 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.320079,-22.914931], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa25 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.331666,-22.923548], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa26 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.332438,-22.92173], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa27 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.34085,-22.928212], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa28 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.342738,-22.927264], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa29 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.345571,-22.935564], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa30 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.347459,-22.935168], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa31 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.351772,-22.94246], 'EPSG:4326', 'EPSG:3857'))});
-    iconFeatureLa32 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.352737,-22.942183], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature1 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.263313,-22.916879], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature2 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.264493,-22.915317], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature3 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.264321,-22.914448], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature4 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.262776,-22.916345], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature5 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.27166,-22.916187], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature6 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.271917,-22.915515], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature7 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.278741,-22.917946], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature8 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.279341,-22.91678], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature9 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.283097,-22.918578], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature10 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.283848,-22.916879], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature11 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.281316,-22.923401], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature12 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.285328,-22.921859], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature13 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.286154,-22.927099], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature14 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.288901,-22.92457], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature15 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.297312,-22.924016], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature16 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.297527,-22.922277], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature17 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.309886,-22.924214], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature18 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.310015,-22.922317], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature19 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.317955,-22.929115], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature20 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.319929,-22.926585], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature21 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.327482,-22.934055], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeature22 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.330572,-22.93204], 'EPSG:4326', 'EPSG:3857'))});
 
+    iconFeatureLa1 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.233669,-22.860173], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa2 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.238218,-22.863317], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa3 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.239012,-22.862704], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa4 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.234291,-22.859679], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa5 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.2406,-22.86824], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa6 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.241801,-22.867805], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa7 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.24914,-22.87251], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa8 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.250213,-22.871561], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa9 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.262143,-22.872589], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa10 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.262315,-22.870889], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa11 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.272915,-22.876385], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa12 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.273473,-22.875357], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa13 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.28609,-22.883463], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa14 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.287978,-22.882197], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa15 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.297763,-22.892872], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa16 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.299823,-22.891765], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa17 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.304029,-22.906314], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa18 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.306003,-22.905049], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa19 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.311496,-22.909397], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa20 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.314843,-22.906867], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa21 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.322825,-22.91841], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa22 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.324027,-22.917184], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa23 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.347266,-22.937099], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa24 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.348467,-22.936427], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa25 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.355184,-22.949554], 'EPSG:4326', 'EPSG:3857'))});
+    iconFeatureLa26 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([-43.356814,-22.94908], 'EPSG:4326', 'EPSG:3857'))});
 
     iconFeature1.setStyle(iconStyleFlagBlue);
     iconFeature2.setStyle(iconStyleFlagBlue);
@@ -198,35 +162,6 @@ function mountStreetMark(){
     iconFeature20.setStyle(iconStyleFlagBlue);
     iconFeature21.setStyle(iconStyleFlagBlue);
     iconFeature22.setStyle(iconStyleFlagBlue);
-    iconFeature23.setStyle(iconStyleFlagBlue);
-    iconFeature24.setStyle(iconStyleFlagBlue);
-    iconFeature25.setStyle(iconStyleFlagBlue);
-    iconFeature26.setStyle(iconStyleFlagBlue);
-    iconFeature27.setStyle(iconStyleFlagBlue);
-    iconFeature28.setStyle(iconStyleFlagBlue);
-    iconFeature30.setStyle(iconStyleFlagBlue);
-    iconFeature31.setStyle(iconStyleFlagBlue);
-    iconFeature32.setStyle(iconStyleFlagBlue);
-    iconFeature33.setStyle(iconStyleFlagBlue);
-    iconFeature34.setStyle(iconStyleFlagBlue);
-    iconFeature35.setStyle(iconStyleFlagBlue);
-    iconFeature36.setStyle(iconStyleFlagBlue);
-    iconFeature37.setStyle(iconStyleFlagBlue);
-    iconFeature38.setStyle(iconStyleFlagBlue);
-    iconFeature39.setStyle(iconStyleFlagBlue);
-    iconFeature40.setStyle(iconStyleFlagBlue);
-    iconFeature41.setStyle(iconStyleFlagBlue);
-    iconFeature42.setStyle(iconStyleFlagBlue);
-    iconFeature43.setStyle(iconStyleFlagBlue);
-    iconFeature44.setStyle(iconStyleFlagBlue);
-    iconFeature45.setStyle(iconStyleFlagBlue);
-    iconFeature46.setStyle(iconStyleFlagBlue);
-    iconFeature47.setStyle(iconStyleFlagBlue);
-    iconFeature48.setStyle(iconStyleFlagBlue);
-    iconFeature49.setStyle(iconStyleFlagBlue);
-    iconFeature50.setStyle(iconStyleFlagBlue);
-    iconFeature51.setStyle(iconStyleFlagBlue);
-    iconFeature52.setStyle(iconStyleFlagBlue);
 
     iconFeatureLa1.setStyle(iconStyleFlagPink);
     iconFeatureLa2.setStyle(iconStyleFlagPink);
@@ -254,32 +189,20 @@ function mountStreetMark(){
     iconFeatureLa24.setStyle(iconStyleFlagPink);
     iconFeatureLa25.setStyle(iconStyleFlagPink);
     iconFeatureLa26.setStyle(iconStyleFlagPink);
-    iconFeatureLa27.setStyle(iconStyleFlagPink);
-    iconFeatureLa28.setStyle(iconStyleFlagPink);
-    iconFeatureLa29.setStyle(iconStyleFlagPink);
-    iconFeatureLa30.setStyle(iconStyleFlagPink);
-    iconFeatureLa31.setStyle(iconStyleFlagPink);
-    iconFeatureLa32.setStyle(iconStyleFlagPink);
+
 
     var vectorSource = new ol.source.Vector({
       features: [
                 iconFeature1,iconFeature2,iconFeature3,iconFeature4,iconFeature5,iconFeature6,
                 iconFeature7,iconFeature8,iconFeature9,iconFeature10,iconFeature11,iconFeature12,
                 iconFeature13,iconFeature14,iconFeature15,iconFeature16,iconFeature17,iconFeature18,
-                iconFeature19,iconFeature20,iconFeature21,iconFeature22,iconFeature23,iconFeature24,
-                iconFeature25,iconFeature26,iconFeature27,iconFeature28,iconFeature30,iconFeature31,
-                iconFeature32,iconFeature33,iconFeature34,iconFeature35,iconFeature36,iconFeature37,
-                iconFeature38,iconFeature39,iconFeature40,iconFeature41,iconFeature42,iconFeature43,
-                iconFeature44,iconFeature45,iconFeature46,iconFeature47,iconFeature48,iconFeature49,
-                iconFeature50,iconFeature51,iconFeature52,
+                iconFeature19,iconFeature20,iconFeature21,iconFeature22,
                 iconFeatureLa1,iconFeatureLa2,iconFeatureLa3,iconFeatureLa4,iconFeatureLa5,
                 iconFeatureLa6,iconFeatureLa7,iconFeatureLa8,iconFeatureLa9,iconFeatureLa10,
                 iconFeatureLa11,iconFeatureLa12,iconFeatureLa13,iconFeatureLa14,iconFeatureLa15,
                 iconFeatureLa16,iconFeatureLa17,iconFeatureLa18,iconFeatureLa19,iconFeatureLa20,
                 iconFeatureLa21,iconFeatureLa22,iconFeatureLa23,iconFeatureLa24,iconFeatureLa25,
-                iconFeatureLa26,iconFeatureLa27,iconFeatureLa28,iconFeatureLa29,iconFeatureLa30,
-                iconFeatureLa31,iconFeatureLa32
-
+                iconFeatureLa26
                ]
     });
 

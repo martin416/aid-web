@@ -3,7 +3,6 @@
 */
 var indexLA = 0;
 var indexGJ = 0;
-
 /**
 ** Funções
 */
@@ -43,6 +42,8 @@ function getJson(url,chart,tag){
     busLat.length = 0;
     busLong.length = 0;
     busSentido.length = 0;
+    qtdBusLa = 0;
+    qtdBusGj = 0;
     $.getJSON( url, function( data ) {
         treatJson(data,chart,tag)
         addBusLayer();
@@ -52,13 +53,14 @@ function getJson(url,chart,tag){
 /*função que limpa os dados e os exibe na tela*/
 function treatJson(snapshotJson,chart,tag){
     var i = 0;
-
+    var qtdBus = 0;
     $.each(snapshotJson.sectorIndo, function(idx, sector) {
         $.each(sector.buses, function(idy, bus) {
            busLat.push(bus.latitude);
            busLong.push(bus.longitude);
            busSentido.push('INDO');
         });
+        qtdBus += sector.amountBus;
         chart.datasets[0].bars[i].value = sector.amountBus;
         i++;
     });
@@ -70,9 +72,10 @@ function treatJson(snapshotJson,chart,tag){
            busLong.push(bus.longitude);
            busSentido.push('VINDO');
         });
+        qtdBus += sector.amountBus
         chart.datasets[1].bars[i].value = sector.amountBus;
         i++;
     });
     chart.update();
-    $(tag).text(snapshotJson.date + ' - ' + snapshotJson.time)
+    $(tag).text(snapshotJson.date + ' - ' + snapshotJson.time + '- qtd:' + qtdBus)
 }

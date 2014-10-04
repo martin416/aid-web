@@ -10,7 +10,7 @@ window.setInterval(function(){ main() }, 10000);
 
 /*função chamada a cada 10seg para atualizar o gráfico e mapa*/
 function main(){
-    handleLinhaAmarela();
+    //handleLinhaAmarela();
     handleGrajau();
 }
 
@@ -30,7 +30,7 @@ function handleLinhaAmarela(){
 function handleGrajau(){
     var url = "http://localhost:8000/getnextjson-gj/"+indexGJ+"/"
     getJson(url,ctxGrajau,'#horarioGJ')
-    if(indexGJ < resultQtdLA - 1){
+    if(indexGJ < resultQtdGJ - 1){
         indexGJ++
     }else{
         indexGJ = 0

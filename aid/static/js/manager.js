@@ -10,26 +10,26 @@ window.setInterval(function(){ main() }, 10000);
 
 /*função chamada a cada 10seg para atualizar o gráfico e mapa*/
 function main(){
-    //handleLinhaAmarela();
+    handleLinhaAmarela();
     handleGrajau();
+    
 }
 
 /*função chamada para controlar a linha amarela exibir seus pontos*/
 function handleLinhaAmarela(){
     var url = "http://localhost:8000/getnextjson-la/"+indexLA+"/"
-    getJson(url,ctxLinhaAmarela,'#horarioLA')
+    getJson(url,'#horarioLA')
     if(indexLA < resultQtdLA - 1){
         indexLA++
     }else{
         indexLA = 0
     }
-    console.log("Passou")
 }
 
 /*função chamada para controlar a grajaú exibir seus pontos*/
 function handleGrajau(){
     var url = "http://localhost:8000/getnextjson-gj/"+indexGJ+"/"
-    getJson(url,ctxGrajau,'#horarioGJ')
+    getJson(url,'#horarioGJ')
     if(indexGJ < resultQtdGJ - 1){
         indexGJ++
     }else{
@@ -38,44 +38,30 @@ function handleGrajau(){
 }
 
 /*função que retorna o json que contem um snapshot da rodovia em dado instante*/
-function getJson(url,chart,tag){
-    busLat.length = 0;
-    busLong.length = 0;
-    busSentido.length = 0;
-    qtdBusLa = 0;
-    qtdBusGj = 0;
+function getJson(url,tag){
+    busList.length = 0;
     $.getJSON( url, function( data ) {
-        treatJson(data,chart,tag)
+        treatJson(data,tag)
         addBusLayer();
+        updateChart();
     });
 }
 
 /*função que limpa os dados e os exibe na tela*/
-function treatJson(snapshotJson,chart,tag){
-    var i = 0;
+function treatJson(snapshotJson,tag){
     var qtdBus = 0;
-    $.each(snapshotJson.sectorIndo, function(idx, sector) {
-        $.each(sector.buses, function(idy, bus) {
-           busLat.push(bus.latitude);
-           busLong.push(bus.longitude);
-           busSentido.push('INDO');
-        });
-        qtdBus += sector.amountBus;
-        chart.datasets[0].bars[i].value = sector.amountBus;
-        i++;
+    $.each(snapshotJson.bus_indo, function(idx, bus) {
+        bus.sentido = 'INDO'
+        busList.push(bus)
     });
-    i=0
-
-    $.each(snapshotJson.sectorVindo, function(idx, sector) {
-        $.each(sector.buses, function(idy, bus) {
-           busLat.push(bus.latitude);
-           busLong.push(bus.longitude);
-           busSentido.push('VINDO');
-        });
-        qtdBus += sector.amountBus
-        chart.datasets[1].bars[i].value = sector.amountBus;
-        i++;
+    $.each(snapshotJson.bus_parado, function(idx, bus) {
+        bus.sentido = 'VINDO'
+        busList.push(bus)
     });
-    chart.update();
-    $(tag).text(snapshotJson.date + ' - ' + snapshotJson.time + '- qtd:' + qtdBus)
+    $.each(snapshotJson.bus_vindo, function(idx, bus) {
+        bus.sentido = 'PARADO'
+        busList.push(bus)
+    });
+    qtdBus = snapshotJson.qtd_indo + snapshotJson.qtd_vindo + snapshotJson.qtd_parado
+    $(tag).text(snapshotJson.date + ' - ' + snapshotJson.time + '- qtd:' + qtdBus )
 }

@@ -39,11 +39,13 @@ function handleGrajau(){
 
 /*função que retorna o json que contem um snapshot da rodovia em dado instante*/
 function getJson(url,tag){
-    busList.length = 0;
+    busListLA.length = 0;
+    busListGJ.length = 0;
     $.getJSON( url, function( data ) {
         treatJson(data,tag)
         addBusLayer();
-        updateChart();
+        updateChartLA();
+        updateChartGJ();
     });
 }
 
@@ -52,15 +54,28 @@ function treatJson(snapshotJson,tag){
     var qtdBus = 0;
     $.each(snapshotJson.bus_indo, function(idx, bus) {
         bus.sentido = 'INDO'
-        busList.push(bus)
+        if(tag == '#horarioGJ'){
+            busListGJ.push(bus)
+        }else{
+            busListLA.push(bus)
+        }
+       
     });
     $.each(snapshotJson.bus_parado, function(idx, bus) {
         bus.sentido = 'VINDO'
-        busList.push(bus)
+        if(tag == '#horarioGJ'){
+            busListGJ.push(bus)
+        }else{
+            busListLA.push(bus)
+        }
     });
     $.each(snapshotJson.bus_vindo, function(idx, bus) {
         bus.sentido = 'PARADO'
-        busList.push(bus)
+        if(tag == '#horarioGJ'){
+            busListGJ.push(bus)
+        }else{
+            busListLA.push(bus)
+        }
     });
     qtdBus = snapshotJson.qtd_indo + snapshotJson.qtd_vindo + snapshotJson.qtd_parado
     $(tag).text(snapshotJson.date + ' - ' + snapshotJson.time + '- qtd:' + qtdBus )

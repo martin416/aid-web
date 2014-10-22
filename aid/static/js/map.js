@@ -1,7 +1,8 @@
 /**
 ** Variaveis Globais
 */
-var busList = [];
+var busListLA = [];
+var busListGJ = [];
 
 /*mapa da tela como variável global*/
 var map = new ol.Map({
@@ -60,17 +61,27 @@ function addBusLayer(){
     });
 
     var busFeature = new ol.source.Vector({});
-    for (i = 0; i <  busList.length; i++) {
-        iconFeature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([ parseFloat(busList[i].longitude),  parseFloat(busList[i].latitude)], 'EPSG:4326', 'EPSG:3857'))});
-        if(busList[i].sentido == 'INDO'){
+    for (i = 0; i <  busListGJ.length; i++) {
+        iconFeature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([ parseFloat(busListGJ[i].longitude),  parseFloat(busListGJ[i].latitude)], 'EPSG:4326', 'EPSG:3857'))});
+        if(busListGJ[i].sentido == 'INDO'){
             iconFeature.setStyle(iconStyleBusIndo);    
-        } else if (busList[i].sentido == 'VINDO'){
+        } else if (busListGJ[i].sentido == 'VINDO'){
             iconFeature.setStyle(iconStyleBusVindo);    
-        } else if (busList[i].sentido == 'PARADO'){
+        } else if (busListGJ[i].sentido == 'PARADO'){
             iconFeature.setStyle(iconStyleBusParado);    
-        }
+        }    
+        busFeature.addFeature(iconFeature);
+    }
 
-        
+    for (i = 0; i <  busListLA.length; i++) {
+        iconFeature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([ parseFloat(busListLA[i].longitude),  parseFloat(busListLA[i].latitude)], 'EPSG:4326', 'EPSG:3857'))});
+        if(busListLA[i].sentido == 'INDO'){
+            iconFeature.setStyle(iconStyleBusIndo);    
+        } else if (busListLA[i].sentido == 'VINDO'){
+            iconFeature.setStyle(iconStyleBusVindo);    
+        } else if (busListLA[i].sentido == 'PARADO'){
+            iconFeature.setStyle(iconStyleBusParado);    
+        }    
         busFeature.addFeature(iconFeature);
     }
     var busLayer = new ol.layer.Vector({source: busFeature});

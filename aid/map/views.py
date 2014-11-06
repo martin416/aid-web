@@ -11,6 +11,7 @@ from map.PostForm import PostForm
 from functools import wraps
 import json
 import sys
+from bus import views
 
 def csrf_exempt(view_func):
     """
@@ -53,6 +54,8 @@ def getNextJsonGJ(request, id = None):
 
 def getNextBusToConvert(request, id = None):
     result = request.session.get('resultGJ',{})
+    t = views.Teste()
+    t.teste()
     return HttpResponse(json.dumps({'nome': 'Gustavo Daniel'}), mimetype="application/json")
 
 @csrf_exempt

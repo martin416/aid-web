@@ -1,0 +1,56 @@
+import pymongo
+from datetime import datetime
+from collections import namedtuple
+import time
+
+busDB = namedtuple('busDB','ordem, lat, long')
+
+class SaveBusMongoDB:
+
+	def __init__(self,street):
+		self.street = street
+		self.dafWeek = ['segunda','terca','quarta','quinta','sexta','sabado','domingo']
+		self.startConnection()
+
+	def  saveBusOnDatabase(self,data, hora):
+		
+		print "..::Add register for "+ time.strftime("%H:%M") +" in Mongo::.."
+		snapshotSave = {'street': self.street,'date': data,'time': hora,'dayOfWeek':self.dafWeek[datetime.today().weekday()]}
+		
+		busListIndo = []
+		busListVindo = []
+		busListParado = []
+
+		snapshotSave["bus_indo"] = []
+		snapshotSave["qtd_indo"] = 0
+		snapshotSave["bus_vindo"] = []
+		snapshotSave["qtd_vindo"] = 0
+		snapshotSave["bus_parado"] = []
+		snapshotSave["qtd_parado"] = 0
+		self.mongoCollection.insert(snapshotSave)
+
+	def startConnection(self):
+		try:
+			mongo=pymongo.MongoClient('127.0.0.1')
+			mongo_db = mongo['aid']
+			collectionName='bus_'+ self.street
+			self.mongoCollection = mongo_db[collectionName]
+		except pymongo.errors.ConnectionFailure, e:
+				print "Could not connect to MongoDB"
+
+	#def updateStreetOnDatabase(self, bus):
+	#	if bus.sentido == 'INDO':
+	#		self.mongoCollection.update({'time': bus.horaServiodr , 'date': bus.dataServidor}, {'$inc':{'sectorIndo.$.amountBus':+1},'$push': {'sectorIndo.$.buses':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude}}}, True)
+	#	elif bus.sentido == 'VINDO'
+	#
+	#	elif bus.parado == 'PARADO'
+
+	def mountBusList(self,busDictToSave,busListIndo,busListVindo,busListParado):
+		for key in busDictToSave:
+			value = {'ordem':busDictToSave[key].ordem,'latitude':busDictToSave[key].latitude,'longitude':busDictToSave[key].longitude}
+			if busDictToSave[key].sentido == 'INDO':
+				busListIndo.append(value)
+			elif busDictToSave[key].sentido == 'VINDO':
+				busListVindo.append(value)
+			elif busDictToSave[key].sentido == 'PARADO':
+				busListParado.append(value)

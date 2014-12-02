@@ -5,8 +5,10 @@ class Util:
 	def compareDictWithBus(self,dict1,dict2):
 		for key in dict1:
 			if key in dict2:
-				dt_obj1 = datetime.datetime.strptime(dict1[key].dataHora, '%m-%d-%Y %H:%M:%S\"')
-				dt_obj2 = datetime.datetime.strptime(dict2[key].dataHora, '%m-%d-%Y %H:%M:%S\"')
+				dataHora1 = dict1[key].dataHora.replace('"','')
+				dataHora2 = dict2[key].dataHora.replace('"','')
+				dt_obj1 = datetime.datetime.strptime(dataHora1, '%m-%d-%Y %H:%M:%S')
+				dt_obj2 = datetime.datetime.strptime(dataHora2, '%m-%d-%Y %H:%M:%S')
 				if dt_obj2-dt_obj1 > datetime.timedelta(0):
 					return False
 		return True

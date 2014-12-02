@@ -12,7 +12,7 @@ class SaveBusMongoDB:
 		self.dafWeek = ['segunda','terca','quarta','quinta','sexta','sabado','domingo']
 		self.startConnection()
 
-	def  saveBusOnDatabase(self,data, hora):
+	def  addRegisterDatabase(self,data, hora):
 		
 		print "..::Add register for "+ time.strftime("%H:%M") +" in Mongo::.."
 		snapshotSave = {'street': self.street,'date': data,'time': hora,'dayOfWeek':self.dafWeek[datetime.today().weekday()]}
@@ -38,12 +38,13 @@ class SaveBusMongoDB:
 		except pymongo.errors.ConnectionFailure, e:
 				print "Could not connect to MongoDB"
 
-	#def updateStreetOnDatabase(self, bus):
-	#	if bus.sentido == 'INDO':
-	#		self.mongoCollection.update({'time': bus.horaServiodr , 'date': bus.dataServidor}, {'$inc':{'sectorIndo.$.amountBus':+1},'$push': {'sectorIndo.$.buses':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude}}}, True)
-	#	elif bus.sentido == 'VINDO'
-	#
-	#	elif bus.parado == 'PARADO'
+	def saveBusOnDatabases(self, bus):
+		if bus.sentido == 'INDO':
+			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_indo':+1},'$push': {'bus_indo':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude , 'velocidade': bus.velocidade }}}, True)
+		elif bus.sentido == 'VINDO':
+			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_vindo':+1},'$push': {'bus_vindo':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude, 'velocidade': bus.velocidade}}}, True)
+		elif bus.parado == 'PARADO':
+			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_parado':+1},'$push': {'bus_parado':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude, 'velocidade': bus.velocidade}}}, True)
 
 	def mountBusList(self,busDictToSave,busListIndo,busListVindo,busListParado):
 		for key in busDictToSave:

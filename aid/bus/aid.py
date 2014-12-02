@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 import MarksOnStreet
 import MonitorBus
+import threading
 
-class aid:
-	def __init__(self):
-		self.busQueue =  []
 
-	def checkForAid(self):
-		marks = MarksOnStreet.MarksOnStreet()
-		#monitorBusGJ = MonitorBus.MonitorBus(marks.grajauJacarepagua.marks,"grajau_jacarepagua",self.busQueue)
-		#monitorBusGJ.start()
+class aid(threading.Thread):
+	def __init__(self,busQueue):
+		threading.Thread.__init__(self)
+		self.busQueue = busQueue
+		self.streetPolys = MarksOnStreet.MarksOnStreet()
+		self.monitorBus = MonitorBus.MonitorBus(self.streetPolys.polys.marks,self.busQueue)
 
-		monitorBusLA = MonitorBus.MonitorBus(marks.linhaAmarela.marks,"linhaAmarela",self.busQueue)
-		monitorBusLA.start()
-
-		#monitorBusGJ.join()
-		monitorBusLA.join()
-
-		import pdb; pdb.set_trace()
+	def run(self):
+		if len(self.busQueue) == 0:
+			self.monitorBus.mountQueue()
+		threading.Timer(300, self.run).start()

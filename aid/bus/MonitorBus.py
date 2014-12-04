@@ -19,6 +19,8 @@ class MonitorBus:
 
     def mountQueue(self):
         print "..:: Start Collect Data "+ ' ' + self.data + " " + self.hora  +" ::..";
+        self.data = time.strftime("%d/%m/%Y")
+        self.hora = time.strftime("%H:%M")
         print "..:: Get First Bus Dict "+ ' ' + self.data + " " + self.hora  +" ::..";
         self.busDictFirst = self.dataManager.getFilteredData(self.polys)
         print "..:: Get Second Bus Dict "+ ' ' + self.data + " " + self.hora  +" ::..";

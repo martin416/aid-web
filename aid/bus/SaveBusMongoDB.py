@@ -43,7 +43,7 @@ class SaveBusMongoDB:
 			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_indo':+1},'$push': {'bus_indo':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude , 'velocidade': bus.velocidade }}}, True)
 		elif bus.sentido == 'VINDO':
 			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_vindo':+1},'$push': {'bus_vindo':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude, 'velocidade': bus.velocidade}}}, True)
-		elif bus.parado == 'PARADO':
+		elif bus.sentido == 'PARADO':
 			self.mongoCollection.update({'time': bus.horaServidor , 'date': bus.dataServidor}, {'$inc':{'qtd_parado':+1},'$push': {'bus_parado':{'ordem':bus.ordem,'latitude':bus.latitude,'longitude':bus.longitude, 'velocidade': bus.velocidade}}}, True)
 
 	def mountBusList(self,busDictToSave,busListIndo,busListVindo,busListParado):

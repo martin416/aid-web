@@ -14,4 +14,5 @@ class aid(threading.Thread):
 	def run(self):
 		if len(self.busQueue) == 0:
 			self.monitorBus.mountQueue()
-		threading.Timer(300, self.run).start()
+			print "..:: Tamanho Fila -> " + str(len(self.busQueue))
+		threading.Timer(120, self.run).start()

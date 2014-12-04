@@ -28,9 +28,9 @@ def csrf_exempt(view_func):
 # Create your views here.
 def getNextBusToConvert(request, id = None):
     busDict = None
-
     if len(busQueue) != 0:
         busTopo = busQueue.pop(0);
+        print "..:: Tamanho Fila -> " + str(len(busQueue))
         busDict = {'dataHora':busTopo.dataHora, 'ordem':busTopo.ordem,'linha':busTopo.linha,'latitude':busTopo.latitude, 'longitude':busTopo.longitude,'velocidade':busTopo.velocidade,'sentido':busTopo.sentido,'street':busTopo.street,'horaServidor': busTopo.horaServidor,'dataServidor': busTopo.dataServidor}
     else:
         busDict = {'erro':'Vetor esta vazio, mas tera onibus em breve'}
@@ -54,9 +54,9 @@ def receiveBusPosition(request):
 
         addressReceived =  ''.join(x for x in bus.streetAndroid if x in string.ascii_letters).lower()
         if addressLA in addressReceived:
-            saveBusLA.saveBusOnDatabase(bus)
+            saveBusLA.saveBusOnDatabases(bus)
         elif addressGJ in addressReceived:
-            saveBusGJ.saveBusOnDatabase(bus)
+            saveBusGJ.saveBusOnDatabases(bus)
 
         response = {'Sucesso':'onibus recebido com suceso'}
     return HttpResponse(json.dumps(response), mimetype="application/json")

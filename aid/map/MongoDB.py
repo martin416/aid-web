@@ -10,7 +10,7 @@ class MongoDB:
             print "Could not connect to MongoDB: %s" % e
         mongo_db = self.mongo['aid']
 
-        self.mongoLinhaAmarela = mongo_db['bus_linhaAmarela']
+        self.mongoLinhaAmarela = mongo_db['bus_linha_amarela']
         self.mongoGrajau = mongo_db['bus_grajau_jacarepagua']
 
     def retrieveGrajauObjectByHour(self,hora):

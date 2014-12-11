@@ -17,7 +17,7 @@ function main(){
 
 /*função chamada para controlar a linha amarela exibir seus pontos*/
 function handleLinhaAmarela(){
-    var url = "http://localhost:8000/getnextjson-la/"+indexLA+"/"
+    var url = "http://localhost:8000/map/getnextjson-la/"+indexLA+"/"
     getJson(url,'#horarioLA')
     if(indexLA < resultQtdLA - 1){
         indexLA++
@@ -28,7 +28,7 @@ function handleLinhaAmarela(){
 
 /*função chamada para controlar a grajaú exibir seus pontos*/
 function handleGrajau(){
-    var url = "http://localhost:8000/getnextjson-gj/"+indexGJ+"/"
+    var url = "http://localhost:8000/map/getnextjson-gj/"+indexGJ+"/"
     getJson(url,'#horarioGJ')
     if(indexGJ < resultQtdGJ - 1){
         indexGJ++

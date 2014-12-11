@@ -1,31 +1,10 @@
 body{
-    margin: 0;
+    marging: 0;
     padding: 0;
-    clear: both;
 }
 
-#map{
-    width: 59%;
-    height: 60%;
+#sidebar{
+    width: 77px;
     float: left;
-}
-
-#charts{
-    width: 39%;
-    height: 60%;
-    float: left;
-}
-
-.title{
-    font-weight: bold;
-}
-
-.center{
-    text-align: center;
-    width: 100% !important;
-    display: inherit;
-}
-
-.small{
-    font-size: 10px;
+    background: white url("../img/bg-wrapper.png") no-repeat right bottom;
 }
